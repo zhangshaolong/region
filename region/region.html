@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link href="css/region.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="aa"></div>
+    <input type="button" value="获取选中的值" id="getVal"/>
+    <input id="cc" type="text"/>
+    <input type="button" value="设置值" id="setVal"/>
+    <div id="bb"></div>
+    <script src="js/jquery.js"></script>
+    <script src="js/region.js"></script>
+    <script>
+        var rg = new Region({
+            container: $(document.getElementById('aa')),
+            layout: ['line', 'line', 'float'],
+            width:700
+        });
+        $('#getVal').click(function () {
+            alert(rg.getVal());
+        });
+        $('#setVal').click(function () {
+            rg.setVal($('#cc').val().split(','));
+        });
+        var data = [
+            {id: 1, text: '中国地区', pid: null},
+            {id: 2, text: '国外', pid: null},
+            {id: 3, text: '华北地区', pid: 1},
+            {id: 4, text: '东北地区', pid: 1},
+            {id: 5, text: '华东地区', pid: 1},
+            {id: 6, text: '华中地区', pid: 1},
+            {id: 7, text: '华南地区', pid: 1},
+            {id: 8, text: '西南地区', pid: 1},
+            {id: 9, text: '西北地区', pid: 1},
+            {id: 10, text: '其他地区', pid: 1},
+            {id: 11, text: '日本', pid: 2},
+            {id: 12, text: '北京', pid: 3},
+            {id: 13, text: '天津', pid: 3},
+            {id: 14, text: '河北', pid: 3},
+            {id: 15, text: '内蒙古', pid: 3},
+            {id: 16, text: '山西', pid: 3},
+            {id: 17, text: '上海', pid: 5},
+            {id: 18, text: '福建', pid: 5},
+            {id: 19, text: '江苏', pid: 5},
+            {id: 20, text: '江西', pid: 5},
+            {id: 21, text: '浙江', pid: 5},
+            {id: 22, text: '福州', pid: 18},
+            {id: 23, text: '宁德', pid: 18},
+            {id: 24, text: '三明', pid: 18},
+            {id: 25, text: '厦门', pid: 18},
+            {id: 26, text: '龙', pid: 18}
+        ];
+        var data1 = [
+                     {id:1, text:'中国地区',
+                         child:[
+                             {id:2, text:'华北地区',
+                                 child:[
+                                     {id:3, text:'第三级',
+                                         child:[
+                                                 {id:4, text:'第四季1'},
+                                                 {id:5, text:'第松岛枫的送范德萨范德萨范德萨范德萨四季2'},
+                                                 {id:6, text:'第四季3'},
+                                                 {id:7, text:'第四季4'},
+                                                 {id:8, text:'第四季5'},
+                                                 {id:9, text:'第四季6'},
+                                                 {id:10, text:'第四季7'},
+                                                 {id:11, text:'第四季8'}
+                                    ]},
+                                         {id:12, text:'第三级',child:[
+                                         {id:13, text:'第四季1'},
+                                         {id:14, text:'第四季2'},
+                                         {id:15, text:'第四季3'}
+                                     ]},
+                                         {id:16, text:'但三级11',child:[
+                                         {id:17, text:'第四季1'},
+                                         {id:18, text:'第四季2'}
+                                     ]}
+                                ]},
+                                 {id:19, text:'国外', child:[
+                                     {id:20, text:'华北2121地区', child:[
+                                         {id:23, text:'北京'},
+                                         {id:223, text:'北京'},
+                                         {id:2223, text:'北京'},
+                                         {id:22223, text:'北京'},
+                                         {id:3333, text:'北京'},
+                                         {id:33, text:'北京'},
+                                         {id:333333, text:'北京'},
+                                         {id:34, text:'北京'}
+                                     ]}
+                                 ]}
+                             ]},
+                             {
+                             id:124423, text:'北adffdfd京'
+                             }
+                         ];
+        rg.load(data1);
+        var rg1 = new Region({
+            container: $('#bb'),
+            layout: ['line', 'line', 'float'],
+            width:500
+        });
+        rg1.load(data);
+    </script>
+</body>
+</html>
