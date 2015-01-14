@@ -10,7 +10,7 @@
  *      float下一级自动设置为block，且block数据不再进行下级数据解析）
  * 支持自动对截断的文本进行title提示
  * 支持block的提示位置自适应
- * @author：张少龙（zhangshaolong@baidu.com）
+ * @author：张少龙（zhangshaolongjj@163.com）
  */
 var Region = function () {
     /**
